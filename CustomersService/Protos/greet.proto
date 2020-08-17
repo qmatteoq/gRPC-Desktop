@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "CustomersService";
+
+package customers;
+
+// The greeting service definition.
+service CustomersEndpoint {
+  // Sends a greeting
+  rpc SaveCustomer (SaveCustomerRequest) returns (SaveCustomerResponse);
+}
+
+// The request message containing the user's name.
+message SaveCustomerRequest {
+  string name = 1;
+  string surname = 2;
+  string mail = 3;
+}
+
+// The response message containing the greetings.
+message SaveCustomerResponse {
+  string message = 1;
+}
